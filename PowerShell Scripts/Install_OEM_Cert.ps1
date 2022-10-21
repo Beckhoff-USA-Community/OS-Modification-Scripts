@@ -3,7 +3,7 @@
 #####################################
 
 $certPath = "C:\TwinCAT\3.1\Target\OemCertificates\"
-$certName = "EngineeringUSA_at_beckhoff.com_7ea01879-7567-0992-20e4-aadc54427969.reg"
+$certName = "EngineeringUSA_at_beckhoff.reg"
 $oemCert = $certPath + $certName
 
 #Import the OEM cert
