@@ -3,7 +3,7 @@
 ############################
 
 # Allow HTTPS (port 443)
-New-NetFirewallRule -DisplayName 'HTTPS-Inbound' `
+New-NetFirewallRule -DisplayName 'HTTPS-Inbound Allow' `
                     -Profile @('Domain', 'Private') `
                     -Direction Inbound `
                     -Action Allow `
@@ -11,15 +11,23 @@ New-NetFirewallRule -DisplayName 'HTTPS-Inbound' `
                     -LocalPort 443
 
 # Allow MQTT (both port 1883 and 8883)
-New-NetFirewallRule -DisplayName 'MQTT-Inbound' `
+New-NetFirewallRule -DisplayName 'MQTT-Inbound Allow' `
                     -Profile @('Domain', 'Private') `
                     -Direction Inbound `
                     -Action Allow `
                     -Protocol TCP `
                     -LocalPort @('1883', '8883')
+                             
+# Allow OPC-UA (port 4840)
+New-NetFirewallRule -DisplayName 'OPC-Inbound Allow' `
+                    -Profile @('Domain', 'Private') `
+                    -Direction Inbound `
+                    -Action Allow `
+                    -Protocol TCP `
+                    -LocalPort 4840                  
 
 # Block HTTP Outbound
-New-NetFirewallRule -DisplayName "Block Outbound Port 80" `
+New-NetFirewallRule -DisplayName "HTTP-Outbound Block" `
                     -Direction Outbound `
                     -Action Block `
                     -Protocol TCP `

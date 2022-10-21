@@ -2,7 +2,7 @@
 ## Add a new user
 ##########################
 # Create a new user
-$username = "JohnH"
+$username = "TwinCAT_User"
 $password = "TwinCAT123"
 $passwordSec = ConvertTo-SecureString -String $password -AsPlainText -Force
 
@@ -11,8 +11,8 @@ $account = Get-LocalUser -Name $username -ErrorAction SilentlyContinue
 if (-not ($null -eq $account)) {
     Remove-LocalUser -Name $username
 }
-New-LocalUser -Name $username -FullName $username -Description "Account for John" -Password $passwordSec
+New-LocalUser -Name $username -FullName $username -Description "Standard User Account for Twincat" -Password $passwordSec
 
 # Make the user part of the Administrators Group
-Add-LocalGroupMember -Group "Administrators" -Member $username
+Add-LocalGroupMember -Group "Users" -Member $username
 ##########################
