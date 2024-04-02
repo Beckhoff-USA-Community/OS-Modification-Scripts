@@ -18,3 +18,6 @@ Remote execution allows you to run the scripts remotely from your development sy
 
 Inside the [Remote Deployment](Remote_Deployment) directory, you will find a **Playbook.ps1** script and a **Beckhoff_Functions.ps1** script. Be sure to read these in detail so that you understand how the functions work. The Beckhoff_Functions are very similar to the local execution samples, but have been modified to be "ScriptBlock" wrapped functions. This allows them to be called easier from the playbook, and run remotely under the hood using the **Invoke-Command** feature with PowerShell.
 
+## Disclaimer
+
+All sample code provided by Beckhoff Automation LLC are for illustrative purposes only and are provided “as is” and without any warranties, express or implied. Actual implementations in applications will vary significantly. Beckhoff Automation LLC shall have no liability for, and does not waive any rights in relation to, any code samples that it provides or the use of such code samples for any purpose.
